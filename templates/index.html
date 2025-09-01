@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;500;700;900&family=Noto+Sans:wght@400;500;700;900&family=Playfair+Display:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>The Langham</title>
+    <link rel="stylesheet" href="static/css/styles.css" />
+  </head>
+  <body>
+    <header class="header">
+          <nav class="auth-nav">
+            <button class="auth-link" onclick="openAuthModal('login-auth-modal')">Login</button>
+            <span class="divider">|</span>
+            <button class="auth-link" onclick="openAuthModal('signup-auth-modal')">Sign Up</button>
+          </nav>
+    </header>
+
+    <!-- Hauptcontainer -->
+    <div class="main-container">
+      <!-- Hero Section -->
+      <section class="hero">
+        <!-- Hotelname -->
+        <div class="hero-title">
+          <h1>The Langham</h1>
+        </div>
+
+        <!-- Beschreibung -->
+        <div class="hero-text">
+          <h2>
+            Enjoy the best of fresh, local and seasonal ingredients in a relaxed
+            yet elegant setting.
+          </h2>
+        </div>
+
+        <!-- Reservierungsbutton -->
+        <button class="reserve-button" onclick="openModal()">Reserve Now</button>
+        <button class="menu-button" onclick="window.location.href='/menu'">Menu</button>
+      </section>
+
+      
+      <!-- Reservierungsmodal -->
+      <div id="reservation-modal" class="modal hidden" aria-hidden="true" role="dialog">
+        <div class="modal-content">
+          <button class="close" onclick="closeModal()" aria-label="Close Reservation Form">&times;</button>
+          <h2>Make a Reservation</h2>
+          <form id="reservation-form" aria-labelledby="Make a Reservation">
+            <label for="date">Date:</label>
+            <input type="date" id="date" name="date" required />
+
+            <label for="time">Time:</label>
+            <select id="time" name="time" required>
+              <option value="12:00">12:00</option>
+              <option value="12:15">12:15</option>
+              <option value="12:30">12:30</option>
+              <option value="12:45">12:45</option>
+              <option value="13:00">13:00</option>
+              <option value="13:15">13:15</option>
+              <option value="13:30">13:30</option>
+              <option value="13:45">13:45</option>
+              <option value="14:00">14:00</option>
+              <option value="14:15">14:15</option>
+              <option value="14:30">14:30</option>
+              <option value="14:45">14:45</option>
+              <option value="15:00">15:00</option>
+              <option value="15:15">15:15</option>
+              <option value="15:30">15:30</option>
+              <option value="15:45">15:45</option>
+              <option value="16:00">16:00</option>
+              <option value="16:15">16:15</option>
+              <option value="16:30">16:30</option>
+              <option value="16:45">16:45</option>
+              <option value="17:00">17:00</option>
+              <option value="17:15">17:15</option>
+              <option value="17:30">17:30</option>
+              <option value="17:45">17:45</option>
+              <option value="18:00">18:00</option>
+              <option value="18:15">18:15</option>
+              <option value="18:30">18:30</option>
+              <option value="18:45">18:45</option>
+              <option value="19:00">19:00</option>
+              <option value="19:15">19:15</option>
+              <option value="19:30">19:30</option>
+              <option value="19:45">19:45</option>
+              <option value="20:00">20:00</option>
+              <option value="20:15">20:15</option>
+              <option value="20:30">20:30</option>
+              <option value="20:45">20:45</option>
+              <option value="21:00">21:00</option>
+              <option value="21:15">21:15</option>
+              <option value="21:30">21:30</option>
+              <option value="21:45">21:45</option>
+            </select>
+
+            <label for="guests">Guests:</label>
+            <input
+              type="number"
+              id="guests"
+              name="guests"
+              min="1"
+              max="20"
+              placeholder="Number of Guests"
+              required
+            />
+
+            <!-- E-Mail-Feld -->
+            <label for="email">Email:</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Enter your email"
+              required
+            />
+
+            <button type="submit">Confirm Reservation</button>
+          </form>
+        </div>
+      </div>
+    </div>
+     <!-- Login Modal -->
+     <div id="login-auth-modal" class="auth-modal hidden" aria-hidden="true" role="dialog">
+      <div class="auth-modal-content">
+        <button class="close" onclick="closeAuthModal('login-auth-modal')" aria-label="Close Login Form">&times;</button>
+        <h2>Login</h2>
+        <form id="login-form">
+          <label for="login-email">Email:</label>
+          <input type="email" id="login-email" name="email" required />
+          <label for="login-password">Password:</label>
+          <input type="password" id="login-password" name="password" required />
+          <button type="submit">Login</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Signup Modal -->
+    <div id="signup-auth-modal" class="auth-modal hidden" aria-hidden="true" role="dialog">
+      <div class="auth-modal-content">
+        <button class="close" onclick="closeAuthModal('signup-auth-modal')" aria-label="Close Signup Form">&times;</button>
+        <h2>Sign Up</h2>
+        <form id="signup-form">
+          <label for="signup-name">Name:</label>
+          <input type="text" id="signup-name" name="name" required />
+          <label for="signup-email">Email:</label>
+          <input type="email" id="signup-email" name="email" required />
+          <label for="signup-password">Password:</label>
+          <input type="password" id="signup-password" name="password" required />
+          <button type="submit">Sign Up</button>
+        </form>
+      </div>
+    </div>
+  
+    <!-- Status Message Container -->
+    <div id="status-message" class="status"></div>
+    
+    <script src="static/js/script.js"></script>
+    <script>
+      // Reservierungsformular
+      document.getElementById('reservation-form').addEventListener('submit', function (event) {
+        event.preventDefault();
+
+        const date = document.getElementById('date').value;
+        const time = document.getElementById('time').value;
+        const guests = document.getElementById('guests').value;
+        const email = document.getElementById('email').value;
+
+        if (date && time && guests && email) {
+          fetch('/save-reservation', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ date, time, guests, email }),
+          })
+            .then((response) => response.json())
+            .then((data) => {
+              showStatusMessage(data.message || 'Reservation saved!');
+              closeModal();
+            })
+            .catch((error) => {
+              console.error('Error:', error);
+              showStatusMessage('Failed to save reservation.', true);
+            });
+        } else {
+          showStatusMessage('Please fill out all fields.', true);
+        }
+      });
+
+      // Login Formular
+      document.getElementById('login-form').addEventListener('submit', function (event) {
+        event.preventDefault();
+
+        const email = document.getElementById('login-email').value;
+        const password = document.getElementById('login-password').value;
+
+        fetch('/login', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ email, password }),
+        })
+            .then(response => response.json())
+            .then(data => {
+                if (data.message && data.message.includes('Welcome back')) {
+                    showStatusMessage(data.message);
+                    closeAuthModal('login-auth-modal');
+                    // Optional: Update UI to show logged-in state
+                    updateAuthUI(true, email);
+                } else {
+                    showStatusMessage(data.message, true);
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                showStatusMessage('Login failed. Please try again.', true);
+            });
+      });
+
+      // Signup Formular
+      document.getElementById('signup-form').addEventListener('submit', function (event) {
+          event.preventDefault();
+
+          const name = document.getElementById('signup-name').value;
+          const email = document.getElementById('signup-email').value;
+          const password = document.getElementById('signup-password').value;
+
+          fetch('/signup', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ name, email, password }),
+          })
+              .then(response => response.json())
+              .then(data => {
+                  if (data.message && data.message.includes('successful')) {
+                      showStatusMessage(data.message);
+                      closeAuthModal('signup-auth-modal');
+                      // Optional: Auto-login after successful signup
+                      setTimeout(() => {
+                          openAuthModal('login-auth-modal');
+                      }, 1500);
+                  } else {
+                      showStatusMessage(data.message, true);
+                  }
+              })
+              .catch(error => {
+                  console.error('Error:', error);
+                  showStatusMessage('Signup failed. Please try again.', true);
+              });
+      });
+
+      // Keyboard Navigation
+      document.body.addEventListener('keydown', function (event) {
+        if (event.key === 'Escape') {
+          // Close any open modal
+          const reservationModal = document.getElementById('reservation-modal');
+          const loginModal = document.getElementById('login-auth-modal');
+          const signupModal = document.getElementById('signup-auth-modal');
+          
+          if (!reservationModal.classList.contains('hidden')) {
+            closeModal();
+          } else if (!loginModal.classList.contains('hidden')) {
+            closeAuthModal('login-auth-modal');
+          } else if (!signupModal.classList.contains('hidden')) {
+            closeAuthModal('signup-auth-modal');
+          }
+        }
+      });
+
+      // Helper function to update auth UI
+      function updateAuthUI(isLoggedIn, userEmail) {
+        const authNav = document.querySelector('.auth-nav');
+        if (isLoggedIn) {
+          authNav.innerHTML = `
+            <span class="user-welcome">Welcome, ${userEmail}</span>
+            <button class="auth-link" onclick="logout()">Logout</button>
+          `;
+        }
+      }
+
+      // Logout function
+      function logout() {
+        fetch('/logout', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' }
+        })
+        .then(response => response.json())
+        .then(data => {
+          updateAuthUI(false);
+          showStatusMessage(data.message);
+          // Reset to original auth nav
+          const authNav = document.querySelector('.auth-nav');
+          authNav.innerHTML = `
+            <button class="auth-link" onclick="openAuthModal('login-auth-modal')">Login</button>
+            <span class="divider">|</span>
+            <button class="auth-link" onclick="openAuthModal('signup-auth-modal')">Sign Up</button>
+          `;
+        })
+        .catch(error => {
+          console.error('Logout error:', error);
+          showStatusMessage('Logout failed', true);
+        });
+      }
+    </script>
+  </body>
+</html>

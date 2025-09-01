@@ -1,0 +1,155 @@
+/* Allgemeines Styling */
+body {
+    font-family: 'Noto Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: 
+        linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+        url('/static/images/finedining.jpg') no-repeat center center fixed;
+    background-size: 105% auto; /* Vergrößert die Breite */
+    color: #ffffff;
+}
+
+
+  
+  /* Menücontainer */
+  .menu-container {
+    text-align: center;
+    padding: 2rem;
+    background-color: rgba(0, 0, 0, 0.2); /* Leicht transparentes Overlay */
+    border-radius: 10px;
+    max-width: 1200px;
+    margin: 2rem auto;
+  }
+  
+  /* Header */
+
+  /* Header Styles */
+  .header {
+    display: flex;
+    justify-content: center; /* Zentriert die Navigation horizontal */
+    align-items: center; /* Zentriert die Navigation vertikal */
+    padding: 1rem;
+    background: transparent; /* Falls du einen Hintergrund möchtest, passe es hier an */
+}
+
+  
+  /* Navigation Styles */
+  .auth-nav {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem; /* Abstand zwischen den Elementen */
+  }
+  
+  /* Link Styles */
+  .auth-link {
+    background: none; /* Kein Hintergrund */
+    border: none; /* Keine Umrandung */
+    color: #ffffff; /* Weiße Schrift */
+    font-family: 'Playfair Display', serif; /* Elegante Schrift */
+    font-size: 1rem; /* Größe der Schrift */
+    font-weight: bold; /* Fett für bessere Lesbarkeit */
+    text-decoration: none; /* Kein Unterstrich */
+    cursor: pointer; /* Zeiger-Cursor */
+    transition: all 0.3s ease-in-out; /* Weiche Übergänge */
+}
+
+.auth-link:hover {
+    color: #f0c14b; /* Goldener Effekt beim Hover */
+    transform: scale(1.05); /* Leichtes Vergrößern beim Hover */
+}
+
+.divider {
+    color: #ffffff; /* Farbe des Trennzeichens */
+    font-size: 1rem; /* Gleiche Größe wie der Text */
+    margin: 0 0.5rem; /* Abstand zu den Links */
+}
+
+  
+  /* Divider Styles */
+  .divider {
+    color: #ffffff; /* Weiß */
+    font-size: 1rem;
+  }
+  
+  .menu-header {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding: 0;
+    color: #ffffff;
+    font-family: 'Playfair Display', serif;
+    background: none; /* Entfernt jeglichen Hintergrund */
+    border: none; /* Entfernt jeglichen Rahmen */
+    box-shadow: none; /* Entfernt Schatten */
+    position: relative; /* Falls nötig */
+    z-index: 10; /* Stellt sicher, dass der Text vor anderen Elementen liegt */
+}
+
+
+  
+  /* Menüabschnitte */
+  .menu-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 2rem;
+  }
+  
+  .menu-card {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 1.5rem;
+    border-radius: 10px;
+    text-align: left;
+    flex: 1 1 calc(50% - 2rem);
+    max-width: 400px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  }
+  
+  .menu-card h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+  }
+  
+  .menu-card .menu-items {
+    list-style: none;
+    padding: 0;
+    font-size: 1rem;
+    line-height: 1.8;
+    margin-bottom: 1rem;
+  }
+  
+  .menu-card .menu-price {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: right;
+    margin-top: 1rem;
+  }
+  
+  /* Footer und Back Button */
+  .menu-footer {
+    margin-top: 2rem;
+  }
+  
+/* Back Button */
+.back-button {
+    background-color: transparent;
+    color: #ffffff;
+    font-family: 'Playfair Display', serif; /* Elegante Schriftart */
+    font-style: italic; /* Kursiv */
+    font-size: 1.2rem;
+    font-weight: 400; /* Feine Schrift */
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.9);
+    transition: all 0.3s ease-in-out;
+    padding: 1rem;
+    margin: -1rem;
+  }
+  
+  .back-button:hover {
+    color: #cccccc; /* Etwas helleres Grau beim Hover */
+    transform: scale(1.1);
+  }
+  
